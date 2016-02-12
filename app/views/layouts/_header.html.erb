@@ -1,0 +1,33 @@
+<header class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--<a class="navbar-brand" href="#">Ruby On Rails Client For Wavelabs Api</a>-->
+            <%= link_to "Ruby On Rails Client For Wavelabs Api", "#" , {class: "navbar-brand"}%>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <% if session[:auth_token].presence %>
+                <li><%= link_to "Profile", com_nbos_core_user_profile_path(id: session[:member]["id"]) %></li>
+                <li><%= link_to "Picture", com_nbos_core_get_media_path %></li>
+                <li><%= link_to "Change Password", com_nbos_core_change_password_path %></li>
+                <li><%= link_to "Log Out", com_nbos_core_logout_path %></li>
+              <% else %>
+                <li><%= link_to "Sign Up", com_nbos_core_sign_up_path %></li>
+                <li><%= link_to "Sign In", com_nbos_core_login_path %></li>
+              <% end %>  
+            </ul>
+        </div>
+    </div>
+</header> 

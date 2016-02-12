@@ -1,0 +1,43 @@
+<% if (@member.present? && @member.message.present?) || flash[:notice] %>
+    <%= render partial: "com/nbos/core/shared/alerts", locals: {obj: @login, notice: flash[:notice]} %>
+ <% end %>
+
+<div class="container">    
+    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">Your Profile</div>
+        </div>
+        <div class="panel-body">
+            <div class="table">
+               <table class="showProfileTable">
+                 <tr>
+                    <td>Description</td>
+                    <td><%= @member.description %></td>
+                 </tr>
+                 <tr>
+                    <td>Email</td>
+                    <td><%= @member.email %></td>
+                 </tr>
+                 <tr>
+                    <td>Firs Name</td>
+                    <td><%= @member.firstName %></td>
+                 </tr>
+                 <tr>
+                    <td>Last Name</td>
+                    <td><%= @member.lastName %></td>
+                  </tr>
+                  <tr>
+                    <td>Phone</td>
+                    <td><%= @member.phone %></td>
+                  </tr>
+                 </tr>
+               </table>
+            </div>
+        </div>
+        <div class="panel-footer" style="height: 50px;">          
+             <%= link_to "Edit", com_nbos_core_edit_path, {class: "btn-sm btn btn-success pull-right"}%>
+          </div>
+      </div>
+    </div>
+  </div>
