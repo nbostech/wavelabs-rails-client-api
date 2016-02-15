@@ -1,5 +1,5 @@
 class Com::Nbos::Social::SocialController < ApplicationController
-
+ skip_before_action :has_token!
 
  def create
    #api_response = send_provider_request(params)
