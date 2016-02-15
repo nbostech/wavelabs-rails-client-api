@@ -71,7 +71,7 @@ Rails.application.routes.draw do
     end
 
     # Client UI Related Routes
-    namespace :com, :path => "/starter-app-rails-client" do
+    namespace :com, :path => nil do
       namespace :nbos, :path => nil do
         namespace :core, :path => nil do
            get "/" => "auth#login"
@@ -96,6 +96,6 @@ Rails.application.routes.draw do
           get '/auth/:provider/callback' => "social#create"
         end  
       end
-    end         
-
+    end 
+      
 end
