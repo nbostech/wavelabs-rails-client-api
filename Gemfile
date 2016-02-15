@@ -43,6 +43,8 @@ gem 'protected_attributes'
 
 gem 'bootstrap-sass'
 
+gem 'font-awesome-sass'
+
 gem 'httparty'
 
 gem 'rest-client'

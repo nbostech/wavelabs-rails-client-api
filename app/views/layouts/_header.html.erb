@@ -9,7 +9,11 @@
                 <span class="icon-bar"></span>
             </button>
             <!--<a class="navbar-brand" href="#">Ruby On Rails Client For Wavelabs Api</a>-->
-            <%= link_to "Ruby On Rails Client For Wavelabs Api", "#" , {class: "navbar-brand"}%>
+            <% if session[:auth_token].presence %>
+              <%= link_to "Ruby On Rails Client For Wavelabs Api", com_nbos_core_dash_board_path , {class: "navbar-brand"}%>
+            <% else %>
+              <%= link_to "Ruby On Rails Client For Wavelabs Api", com_nbos_core_path , {class: "navbar-brand"}%>
+            <% end %>  
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

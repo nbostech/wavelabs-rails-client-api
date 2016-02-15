@@ -6,6 +6,7 @@ class Com::Nbos::Client::Api::Core::SocialApi < Com::Nbos::Client::Api::BaseApi
  TWITER_LOGIN_URI = "/api/v0/auth/social/twitter/connect"
  GITHUB_LOGIN_URI = "/api/v0/auth/social/gitHub/connect"
  LINKEDIN_LOGIN_URI = "/api/v0/auth/social/linkedIn/connect"
+ INSTAGRAM_LOGIN_URI = "/api/v0/auth/social/instagram/connect"
 
  
 
@@ -55,7 +56,9 @@ def get_scoial_login_uri(provider)
    elsif provider == "github"
      GITHUB_LOGIN_URI
    elsif provider == "linkedin"
-     LINKEDIN_LOGIN_URI  
+     LINKEDIN_LOGIN_URI 
+   elsif provider == "instagram"
+     LINKEDIN_LOGIN_URI     
    end  
 end  
 
