@@ -52,6 +52,12 @@ class Com::Nbos::Core::AuthController < ApplicationController
         render :forgot_password
       end
     end  
+  end
+
+  def omniauth_failure
+    debugger
+    redirect_to :com_nbos_core_login
+    #redirect wherever you want.
   end 
 
  def create_basic_login_model

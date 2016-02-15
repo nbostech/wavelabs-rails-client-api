@@ -49,7 +49,7 @@ class Com::Nbos::Core::UsersController < ApplicationController
         render :edit
       end
     else
-      @member = create_member_model({"member" => session[:member]},true)  
+      @member = create_member_model({"member" => session[:member]},false)  
     end  
   end
 

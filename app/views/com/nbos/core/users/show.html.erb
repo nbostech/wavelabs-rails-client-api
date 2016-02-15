@@ -31,7 +31,14 @@
                     <td>Phone</td>
                     <td><%= @member.phone %></td>
                   </tr>
-                 </tr>
+                  <% if @member.social_accounts.size > 0 %>
+                    <tr>
+                        <td>Social Account</td>
+                    <% @member.social_accounts.each do |sa| %>
+                        <td><%= sa.social_type%></td>
+                    <% end %>
+                    </tr>
+                  <% end %>
                </table>
             </div>
         </div>

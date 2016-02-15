@@ -50,6 +50,14 @@ gem 'omniauth-facebook'
 
 gem 'omniauth-google-oauth2'
 
+gem 'omniauth-twitter'
+
+gem 'omniauth-github'
+
+gem 'omniauth-linkedin-oauth2'
+
+gem 'omniauth-instagram'
+
 gem 'httmultiparty'
 
 group :development, :test do

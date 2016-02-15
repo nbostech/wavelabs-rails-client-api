@@ -68,4 +68,8 @@ class Com::Nbos::Client::Api::BaseApi
    Com::Nbos::Client::Api::DataModels::MessageApiModel.new(json_response)	
  end
 
+ def create_social_model(json_response)  
+   Com::Nbos::Client::Api::DataModels::SocialAccountsModel.new(json_response) 
+ end
+
 end	
