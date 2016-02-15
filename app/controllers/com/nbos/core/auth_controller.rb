@@ -1,6 +1,7 @@
 class Com::Nbos::Core::AuthController < ApplicationController
   
   before_action :has_token!, :except => [:login, :forgot_password]
+  before_action :check_server_connection!, :only => [:login]
 
   #skip_before_action :check_server_connection!, only: [:login, :logout]
 
