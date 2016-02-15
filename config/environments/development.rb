@@ -39,34 +39,3 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
-
-ENV['API_HOST_URL'] = "http://localhost:8080/starter-app-rest-grails"
-ENV['API_CLIENT_ID'] = "my-client"
-ENV['API_CLIENT_SECRET'] = "$2a$10$R.b4bFfMN1a.fRptqpF.yelctUYOrVtqGnjSc4J8A1bhO03Qyz3Aa"
-
-
-#Social apps client info:
-
-ENV['FACEBOOK_KEY'] = "491136411063102"
-ENV['FACEBOOK_SECRET'] = "02ca29c33c8fea9f7151683ad5743274"
-
-ENV['GOOGLE_KEY'] = "607620882992-l55qmpgmf1vjo5e9tj5i678pjph9gfmp.apps.googleusercontent.com"
-ENV['GOOGLE_SECRET'] = "0GFF4ImPKxivSdlitkX9O7Lo"
-
-ENV['TWITTER_KEY'] = "edpJtQl2UGYcuYQOP4XVfh4x9"
-ENV['TWITTER_SECRET'] = "sxMwoGVlqbPofuuCeWOsRMTczfoAtEz3lIC866l2MIfpC3Jzh7"
-
-ENV['GITHUB_KEY'] = "efdaa531214c4fac04a0"
-ENV['GITHUB_SECRET'] = "ae112098a1af3fc377694abc877732106b82bfbd"
-
-ENV['LINKEDIN_KEY'] = ""
-ENV['LINKEDIN_SECRET'] = ""
-
-ENV['INSTAGRAM_ID'] = ""
-ENV['INSTAGRAM_SECRET'] = "" 
-
-
-
-
-
-
