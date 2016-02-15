@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use mysql as the database for Active Record
@@ -61,6 +61,8 @@ gem 'omniauth-instagram'
 gem 'httmultiparty'
 
 gem "figaro"
+
+gem "rails_12factor"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
