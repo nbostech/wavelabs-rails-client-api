@@ -31,7 +31,7 @@ class Com::Nbos::Core::MediaController < ApplicationController
 
 
   def uploadFile(file_obj)
-    path = Rails.root.join('public', 'uploads', file_obj.original_filename)
+    path = Rails.root.join('tmp', file_obj.original_filename)
     File.open(path , 'wb') do |file|
       file.write(file_obj.read)
     end
