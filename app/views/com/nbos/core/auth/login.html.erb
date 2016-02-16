@@ -17,14 +17,14 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <%= f.text_field :username, autofocus: true, class: "form-control", id: "username", title: "Please enter your username", placeholder: "UserName"  %>
+              <%= f.text_field :username, autofocus: true, class: "form-control", id: "username", title: "Please enter your username", placeholder: "UserName", required: true  %>
               <%= errors_for @login, :username %>
             </div>
           </div>
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <%= f.password_field :password, autofocus: true, class: "form-control", id: "password", title: "Please enter your password", placeholder: "******" %>
+              <%= f.password_field :password, autofocus: true, class: "form-control", id: "password", title: "Please enter your password", placeholder: "******" , required: true%>
                 <%= errors_for @login, :password %>
             </div>
           </div>

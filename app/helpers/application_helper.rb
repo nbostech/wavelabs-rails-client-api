@@ -14,7 +14,7 @@ end
 
 def is_a_social_member?
   if current_user
-  	if current_user["social_acoounts"].presence && current_user["social_acoounts"].size > 0
+  	if current_user["social_accounts"].presence && current_user["social_accounts"].first["id"] != nil
   		true
   	else
   		false

@@ -9,7 +9,7 @@ class Com::Nbos::Core::UsersController < ApplicationController
   def sign_up
     @login = create_basic_login_model
    if request.post?
-     api_response = getUsersApi.sign_up(params[:com_nbos_client_api_data_models_login_model])
+     api_response = getUsersApi.sign_up(params[:com_nbos_client_api_data_models_login_api_model])
       if api_response[:status] == 200
         @login = api_response[:member]
         create_session(@login)
@@ -41,7 +41,7 @@ class Com::Nbos::Core::UsersController < ApplicationController
 
   def edit
     if request.post?
-      user_update_params = params[:com_nbos_client_api_data_models_member_model]
+      user_update_params = params[:com_nbos_client_api_data_models_member_api_model]
       api_response = getUsersApi.update(user_update_params, session[:auth_token])
       if api_response[:status] == 200
         flash.now[:notice] = "Your Profile has been updated successfully."
