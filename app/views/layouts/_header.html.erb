@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <!--<a class="navbar-brand" href="#">Ruby On Rails Client For Wavelabs Api</a>-->
-            <% if session[:auth_token].presence %>
+            <% if current_user %>
               <%= link_to "Ruby On Rails Client For Wavelabs Api", com_nbos_core_dash_board_path , {class: "navbar-brand"}%>
             <% else %>
               <%= link_to "Ruby On Rails Client For Wavelabs Api", com_nbos_core_path , {class: "navbar-brand"}%>
@@ -22,10 +22,12 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <% if session[:auth_token].presence %>
+              <% if current_user %>
                 <li><%= link_to "Profile", com_nbos_core_user_profile_path(id: session[:member]["id"]) %></li>
                 <li><%= link_to "Picture", com_nbos_core_get_media_path %></li>
-                <li><%= link_to "Change Password", com_nbos_core_change_password_path %></li>
+                <% if is_a_social_member? %>
+                  <li><%= link_to "Change Password", com_nbos_core_change_password_path %></li>
+                <% end %>  
                 <li><%= link_to "Log Out", com_nbos_core_logout_path %></li>
               <% else %>
                 <li><%= link_to "Sign Up", com_nbos_core_sign_up_path %></li>

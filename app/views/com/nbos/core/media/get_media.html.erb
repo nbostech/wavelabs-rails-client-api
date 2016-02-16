@@ -15,7 +15,7 @@
           <%= form_for(@media, url: com_nbos_core_update_media_path, method: 'put', html: { role: "form", class: "form-horizontal", multipart: true }) do |f| %>
             <div class="form-group">
               <div class="col-md-9">
-               <%= image_tag(@media.mediaFileDetailsList[1].to_h["mediapath"]) if @media.present? && @media.mediaFileDetailsList.present?%>
+               <%= image_tag(@file_path) if @file_path.present?%>
               </div>
             </div>
             <div class="form-group">

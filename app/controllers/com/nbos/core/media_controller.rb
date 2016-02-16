@@ -13,6 +13,7 @@ class Com::Nbos::Core::MediaController < ApplicationController
   	api_response = getMediaApi.get_media(session[:member]["id"], "profile", session[:auth_token])
   	if api_response[:status] == 200
       @media = api_response[:media]
+      @file_path = @media.mediaFileDetailsList[1].to_h["mediapath"]
     else
       flash.now[:notice] = api_response[:message].message
       @media = create_media_model(nil)		

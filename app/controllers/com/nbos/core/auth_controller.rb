@@ -58,4 +58,9 @@ class Com::Nbos::Core::AuthController < ApplicationController
     end  
   end
 
+  def omniauth_failure
+    flash[:notice] = params
+    redirect_to :com_nbos_core_login
+  end
+
 end
