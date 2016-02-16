@@ -7,7 +7,7 @@ class Com::Nbos::Core::UsersController < ApplicationController
   before_action :has_token!, :except => [:sign_up]
 
   def sign_up
-    @login = Com::Nbos::Client::Api::DataModels::LoginModel.new
+    @login = create_basic_login_model
    if request.post?
      api_response = getUsersApi.sign_up(params[:com_nbos_client_api_data_models_login_model])
       if api_response[:status] == 200

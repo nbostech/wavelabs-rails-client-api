@@ -1,8 +1,12 @@
-class Com::Nbos::Client::Api::DataModels::MemberModel
+# This class is a virtual Model for MemberApi model.
+# It have required attributes to create the MemberApi model.
+# It will create associated TokenApi & SocialAccountsApi model objects based on Response. 
+# And also it included the Rails ActiveModel::Validations to 
+# add errors which will populate on views. Based on the response from
+# Wavelabs API server 'add_errors' or 'add_messages' methods add appropriate
+# messages to MemberAPi model object.
 
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
-  extend ActiveModel::Naming
+class Com::Nbos::Client::Api::DataModels::MemberApiModel < Com::Nbos::Client::Api::DataModels::BaseApiModel
 
   attr_accessor :id, :username, :description, :email, :firstName, :lastName, :phone, :social_accounts, :token, :message
 
@@ -19,14 +23,14 @@ class Com::Nbos::Client::Api::DataModels::MemberModel
   end
 
   def build_associated_models(token_params, social_params, except_token)
-    @token = Com::Nbos::Client::Api::DataModels::TokenModel.new(token_params) if !except_token
+    @token = create_token_model(token_params) if !except_token
     @social_accounts = []
     if social_params.presence && social_params.size > 0
       social_params.each do |sp|
-        @social_accounts << Com::Nbos::Client::Api::DataModels::SocialAccountsModel.new(sp)
+        @social_accounts << create_social_model(sp)
       end
     else
-      @social_accounts << Com::Nbos::Client::Api::DataModels::SocialAccountsModel.new(nil)
+      @social_accounts << create_social_model(nil)
     end  
  
   end 

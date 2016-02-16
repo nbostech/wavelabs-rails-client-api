@@ -1,4 +1,11 @@
-class Com::Nbos::Client::Api::Core::SocialApi < Com::Nbos::Client::Api::BaseApi
+# This class is responsible for handling
+# Requests from Com::Nbos::Core::SocialController.
+# It will create the request based on Controller request params and 
+# send that request to Wavelabs API server and return the response back.
+# While sending respose back to receiver it will create the virtual models
+# from Com::Nbos::Api::DataModels
+
+class Com::Nbos::Client::Api::Core::SocialApi < Com::Nbos::Client::Api::Core::BaseApi
 
  # Api Server Social Authentication End Point URIs
  FACEBOOK_LOGIN_URI = "/api/v0/auth/social/facebook/connect"
@@ -46,6 +53,7 @@ def login(social_params, provider)
 end
 
 
+# Method to return end point URI for specific social login
 def get_scoial_login_uri(provider)
    if provider == "facebook"
      FACEBOOK_LOGIN_URI

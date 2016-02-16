@@ -1,4 +1,11 @@
-class Com::Nbos::Client::Api::Core::UsersApi < Com::Nbos::Client::Api::BaseApi
+# This class is responsible for handling
+# Requests from Com::Nbos::Core::UsersController.
+# It will create the request based on Controller request params and 
+# send that request to Wavelabs API server and return the response back.
+# While sending respose back to receiver it will create the virtual models
+# from Com::Nbos::Api::DataModels
+
+class Com::Nbos::Client::Api::Core::UsersApi < Com::Nbos::Client::Api::Core::BaseApi
 
   SIGNUP_URI = "/api/v0/users/signup"
   USER_URI = "/api/v0/users"

@@ -1,4 +1,11 @@
-class Com::Nbos::Client::Api::DataModels::SocialAccountsModel
+# This class is a virtual Model for SocialAccountsApiModel.
+# It have required attributes to create the SocialAccountsApiModel object.
+# And also it included the Rails ActiveModel::Validations to 
+# add errors which will populate on views. Based on the response from
+# Wavelabs API server 'add_errors' or 'add_messages' methods add appropriate
+# messages to SocialAccountsApiModel object.
+
+class Com::Nbos::Client::Api::DataModels::SocialAccountsApiModel < Com::Nbos::Client::Api::DataModels::BaseApiModel
 
   attr_accessor :id, :email, :social_type, :image_url
 

@@ -1,8 +1,10 @@
-class Com::Nbos::Client::Api::DataModels::MessageApiModel
+# This class is a virtual Model for MessageApi model.
+# It have required attributes to create the MessageApi model object.
+# The purpose of this class is to create MessageApi model object
+# to send back the API Server response. 
 
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
-  extend ActiveModel::Naming
+
+class Com::Nbos::Client::Api::DataModels::MessageApiModel
 
   attr_accessor :status, :messgeCode, :message
 

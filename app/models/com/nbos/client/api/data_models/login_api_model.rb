@@ -1,8 +1,11 @@
-class Com::Nbos::Client::Api::DataModels::LoginModel
+# This class is a virtual Model for LoginApiModel.
+# It have required attributes to create the LoginApiModel object.
+# And also it included the Rails ActiveModel::Validations to 
+# add errors which will populate on views. Based on the response from
+# Wavelabs API server 'add_errors' or 'add_messages' methods add appropriate
+# messages to LoginApi model object.
 
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
-  extend ActiveModel::Naming
+class Com::Nbos::Client::Api::DataModels::LoginApiModel < Com::Nbos::Client::Api::DataModels::BaseApiModel
 
   attr_accessor :username, :password, :email, :firstName, :lastName, :phone, :newPassword, :message
 

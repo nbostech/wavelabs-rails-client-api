@@ -1,3 +1,10 @@
+
+# This class is responsible for handling
+# Requests from Com::Nbos::Core::AuthController.
+# It will create the request based on Controller request params and 
+# send that request to Wavelabs API server and return the response back.
+# While sending respose back to receiver it will create the virtual models
+# from Com::Nbos::Api::DataModels
 class Com::Nbos::Client::Api::Core::AuthApi < Com::Nbos::Client::Api::BaseApi
   
   # Api Server Authentication End Point URIs
@@ -105,6 +112,7 @@ class Com::Nbos::Client::Api::Core::AuthApi < Com::Nbos::Client::Api::BaseApi
  end
 
 
+ # To-Do 
  # Need to Implement this based on Server Side Logic
  def reset_password
  	 url_path = base_api_url(RESET_PASSWORD_URI)

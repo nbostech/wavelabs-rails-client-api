@@ -1,4 +1,8 @@
-class Com::Nbos::Client::Api::DataModels::TokenModel
+# This class is a virtual Model for TokenApiModel.
+# It have required attributes to create the TokenApiModel object.
+
+
+class Com::Nbos::Client::Api::DataModels::TokenApiModel
   attr_accessor :value, :expires_in, :refresh_token, :scope, :token_type
 
   def initialize(token_params)

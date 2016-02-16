@@ -69,11 +69,11 @@ class ApplicationController < ActionController::Base
 
   
   def create_basic_login_model
-   Com::Nbos::Client::Api::DataModels::LoginModel.new
+   Com::Nbos::Client::Api::DataModels::LoginApiModel.new
   end
 
   def create_member_model(sign_up_params, except_token)
-    Com::Nbos::Client::Api::DataModels::MemberModel.new(sign_up_params, except_token) 
+    Com::Nbos::Client::Api::DataModels::MemberApiModel.new(sign_up_params, except_token) 
   end
 
   def create_media_model(media_params)
