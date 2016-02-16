@@ -54,22 +54,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-    # API Server Related Routes
-    namespace :api , :path => "/starter-app-rest-rails/api" do
-      namespace :v0, :path => "/v0/sample"do
-        get 'about' => 'sample#about', :path => '/about'
-        get 'securedWithClientOAuth' => 'sample#secured_with_client_oAuth', :path => '/securedWithClientOAuth'
-        get 'securedWithOAuth' => 'sample#secured_with_oAuth', :path => '/securedWithOAuth'
-        get 'securedWithUserOAuth' => 'sample#secured_with_user_oAuth', :path => '/securedWithUserOAuth'
-      end
-
-      namespace :v0, :path => "/v0/oauth" do
-        get 'token' => 'oauth#token_authorizer', :path => '/token_authorizer'
-        get 'token' => 'oauth#token', :path => '/token'
-      end
-
-    end
-
     # Client UI Related Routes
     namespace :com, :path => nil do
       namespace :nbos, :path => nil do

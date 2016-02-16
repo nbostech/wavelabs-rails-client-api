@@ -1,3 +1,7 @@
+# This controller is responsible for handling 
+# user's sign_up , dash_board, show & edit 
+# requests with Wavelabes API Server
+
 class Com::Nbos::Core::UsersController < ApplicationController
 
   before_action :has_token!, :except => [:sign_up]
@@ -18,10 +22,11 @@ class Com::Nbos::Core::UsersController < ApplicationController
   end
 
   def dash_board
-    
+    # Need to implement the dashboard page 
   end  
 
   def show
+   if request.get? && params[:id].present? 
     user_show_params = params
     api_response = getUsersApi.show(user_show_params, session[:auth_token])
     if api_response[:status] == 200
@@ -29,6 +34,9 @@ class Com::Nbos::Core::UsersController < ApplicationController
     else
       @login = api_response[:member]
     end
+   else
+     flash[:notice] = "There was a problem with the request or Server. Please logout & ogin again."
+   end 
   end
 
   def edit
@@ -52,13 +60,5 @@ class Com::Nbos::Core::UsersController < ApplicationController
       @member = create_member_model({"member" => session[:member]},false)  
     end  
   end
-
-  def update_session(member)
-    session[:member]["email"] = member.email
-    session[:member]["firstName"] = member.firstName
-    session[:member]["description"] = member.description
-    session[:member]["lastName"] = member.lastName
-    session[:member]["phone"] = member.phone
-  end 
 
 end

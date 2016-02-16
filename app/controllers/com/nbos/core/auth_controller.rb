@@ -1,9 +1,12 @@
+
+# This controller is responsible for handling 
+# user login ,logout, change_password & forgot_password
+# requests with Wavelabes API Server
+
 class Com::Nbos::Core::AuthController < ApplicationController
   
   before_action :has_token!, :except => [:login, :forgot_password]
   before_action :check_server_connection!, :only => [:login]
-
-  #skip_before_action :check_server_connection!, only: [:login, :logout]
 
   def login
     @login = create_basic_login_model
@@ -54,15 +57,5 @@ class Com::Nbos::Core::AuthController < ApplicationController
       end
     end  
   end
-
-  def omniauth_failure
-    debugger
-    redirect_to :com_nbos_core_login
-    #redirect wherever you want.
-  end 
-
- def create_basic_login_model
-   Com::Nbos::Client::Api::DataModels::LoginModel.new
- end 
 
 end

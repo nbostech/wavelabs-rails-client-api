@@ -1,3 +1,10 @@
+# This controller is responsible for handling 
+# user's get profile picture & upload profile picture
+# requests with Wavelabes API Server. 
+# This controller will store the uploaded picture into client side
+# temporary directory "Rails.root/tmp". After successfull upload into
+# Wavelabs Server client side temporary file will be deleted. 
+
 class Com::Nbos::Core::MediaController < ApplicationController
   before_action :has_token!
 
@@ -29,7 +36,8 @@ class Com::Nbos::Core::MediaController < ApplicationController
 
   end
 
-
+ private 
+ 
   def uploadFile(file_obj)
     path = Rails.root.join('tmp', file_obj.original_filename)
     File.open(path , 'wb') do |file|

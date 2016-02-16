@@ -41,10 +41,6 @@ gem 'responders', '~> 2.0'
 
 gem 'protected_attributes'
 
-gem 'bootstrap-sass'
-
-gem 'font-awesome-sass'
-
 gem 'httparty'
 
 gem 'rest-client'
@@ -66,6 +62,8 @@ gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-instagram'
 
 gem 'httmultiparty'
+
+gem "font-awesome-rails"
 
 gem "figaro"
 

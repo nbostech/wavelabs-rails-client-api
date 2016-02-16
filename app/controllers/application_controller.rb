@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  include Com::Nbos::Oauth::TokenAuthorizer
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -40,6 +39,14 @@ class ApplicationController < ActionController::Base
 
   def clear_session
     session[:auth_token], session[:refresh_token] , session[:member], session[:logged_in_time]= nil
+  end
+
+  def update_session(member)
+    session[:member]["email"] = member.email
+    session[:member]["firstName"] = member.firstName
+    session[:member]["description"] = member.description
+    session[:member]["lastName"] = member.lastName
+    session[:member]["phone"] = member.phone
   end 
 
 
@@ -59,6 +66,11 @@ class ApplicationController < ActionController::Base
   def getMediaApi
     Com::Nbos::Client::Api::Core::MediaApi.new
   end 
+
+  
+  def create_basic_login_model
+   Com::Nbos::Client::Api::DataModels::LoginModel.new
+  end
 
   def create_member_model(sign_up_params, except_token)
     Com::Nbos::Client::Api::DataModels::MemberModel.new(sign_up_params, except_token) 
