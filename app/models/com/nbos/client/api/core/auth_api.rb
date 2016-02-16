@@ -5,7 +5,7 @@
 # send that request to Wavelabs API server and return the response back.
 # While sending respose back to receiver it will create the virtual models
 # from Com::Nbos::Api::DataModels
-class Com::Nbos::Client::Api::Core::AuthApi < Com::Nbos::Client::Api::BaseApi
+class Com::Nbos::Client::Api::Core::AuthApi < Com::Nbos::Client::Api::Core::BaseApi
   
   # Api Server Authentication End Point URIs
   LOGIN_URI           = "/api/v0/auth/login"

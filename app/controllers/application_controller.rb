@@ -81,7 +81,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_server_connection!
-    if Com::Nbos::Client::Api::BaseApi.check_connection?
+    if Com::Nbos::Client::Api::Core::BaseApi.check_connection?
       true
     else
       flash[:notice] = "The Wavelabs Api server is down please try after sometime."

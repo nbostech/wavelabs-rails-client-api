@@ -22,7 +22,7 @@
               <label for="newPwd" class="col-md-3 control-label">Up Load</label>
 
               <div class="col-md-9">
-                <%= f.file_field :newMedia, class: "form-control", id: "newMedia" %>
+                <%= f.file_field :newMedia, class: "form-control", id: "newMedia", required: true %>
                 <%= errors_for @media, :newMedia %>
               </div>
             </div>
