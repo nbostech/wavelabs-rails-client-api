@@ -58,7 +58,7 @@ def get_scoial_login_uri(provider)
    elsif provider == "linkedin"
      LINKEDIN_LOGIN_URI 
    elsif provider == "instagram"
-     LINKEDIN_LOGIN_URI     
+     INSTAGRAM_LOGIN_URI     
    end  
 end  
 
