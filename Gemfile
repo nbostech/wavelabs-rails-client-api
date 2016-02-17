@@ -69,6 +69,8 @@ gem "figaro"
 
 gem "rails_12factor"
 
+gem "wavelabs_client_api", "0.1.6"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

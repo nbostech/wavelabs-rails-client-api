@@ -51,37 +51,37 @@ class ApplicationController < ActionController::Base
 
 
   def getAuthApi
-    Com::Nbos::Client::Api::Core::AuthApi.new
+    WavelabsClientApi::Client::Api::Core::AuthApi.new
   end
 
 
   def getUsersApi
-    Com::Nbos::Client::Api::Core::UsersApi.new
+    WavelabsClientApi::Client::Api::Core::UsersApi.new
   end
 
   def getSocialApi
-  	Com::Nbos::Client::Api::Core::SocialApi.new
+  	WavelabsClientApi::Client::Api::Core::SocialApi.new
   end
 
   def getMediaApi
-    Com::Nbos::Client::Api::Core::MediaApi.new
+    WavelabsClientApi::Client::Api::Core::MediaApi.new
   end 
 
   
   def create_basic_login_model
-   Com::Nbos::Client::Api::DataModels::LoginApiModel.new
+   WavelabsClientApi::Client::Api::DataModels::LoginApiModel.new
   end
 
   def create_member_model(sign_up_params, except_token)
-    Com::Nbos::Client::Api::DataModels::MemberApiModel.new(sign_up_params, except_token) 
+    WavelabsClientApi::Client::Api::DataModels::MemberApiModel.new(sign_up_params, except_token) 
   end
 
   def create_media_model(media_params)
-    Com::Nbos::Client::Api::DataModels::MediaApiModel.new(media_params) 
+    WavelabsClientApi::Client::Api::DataModels::MediaApiModel.new(media_params) 
   end
 
   def check_server_connection!
-    if Com::Nbos::Client::Api::Core::BaseApi.check_connection?
+    if WavelabsClientApi::Client::Api::Core::BaseApi.check_connection?
       true
     else
       flash[:notice] = "The Wavelabs Api server is down please try after sometime."

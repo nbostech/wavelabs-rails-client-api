@@ -22,7 +22,7 @@ class Com::Nbos::Core::MediaController < ApplicationController
   
   def update_media
 
-    temp_file_path = uploadFile(params[:com_nbos_client_api_data_models_media_api_model][:newMedia])
+    temp_file_path = uploadFile(params[:wavelabs_client_api_client_api_data_models_media_api_model][:newMedia])
     
     api_response = getMediaApi.upload_media(temp_file_path, "profile", session[:auth_token], session[:member]["id"]) 
     

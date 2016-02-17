@@ -210,6 +210,9 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
+    wavelabs_client_api (0.1.6)
+      activemodel (= 4.2.4)
+      httmultiparty (= 0.3.16)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -249,6 +252,7 @@ DEPENDENCIES
   swagger-docs
   turbolinks
   uglifier (>= 1.3.0)
+  wavelabs_client_api (= 0.1.6)
   web-console (~> 2.0)
 
 BUNDLED WITH
