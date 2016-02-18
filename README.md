@@ -2,40 +2,41 @@
 
   This is an example application to demonstarte how to use 'wavelabs_client_api' library using Ruby On Rail framework. This application using following major gems:
 
-      # For OAuth protocal 
-      gem 'omniauth-oauth2', '~> 1.3.1'
+        # For OAuth protocal 
+        gem 'omniauth-oauth2', '~> 1.3.1'
 
-			# For Login with Facebook 
-			gem 'omniauth-facebook'
-
-			# For Login with Google +
-			gem 'omniauth-google-oauth2'
-
-			# For Login with github
-			gem 'omniauth-github'
-
-			# For Login with linkedin
-			gem 'omniauth-linkedin-oauth2'
-
-			# For Login with Instagram
-			gem 'omniauth-instagram'
-
-			# Run time dependent for wavelabs_client_api gem
-			gem 'httmultiparty'
-
-			# For using icons in views
-			gem "font-awesome-rails"
-
-			# For Environment variables
-			gem "figaro"
+	# For Login with Facebook 
+	gem 'omniauth-facebook'
+	
+	# For Login with Google +
+	gem 'omniauth-google-oauth2'
+	
+	# For Login with github
+	gem 'omniauth-github'
+	
+	# For Login with linkedin
+	gem 'omniauth-linkedin-oauth2'
+	
+	# For Login with Instagram
+	gem 'omniauth-instagram'
+	
+	# Run time dependent for wavelabs_client_api gem
+	gem 'httmultiparty'
+	
+	# For using icons in views
+	gem "font-awesome-rails"
+	
+	# For Environment variables
+	gem "figaro"
 
 
 	Gemfile contains all the required gems list. No need to worry about gems list 'bundle install' will install all the gems. Live application is available on heroku https://wavelabs-rails-client-api.herokuapp.com  
 
 ## Ruby & Rails versions
 
-  Ruby 2.2.3
-  Rails 4.2.4
+  1. Ruby 2.2.3
+  
+  2. Rails 4.2.4
 
   You can install required versions of ruby, rails & gemsets using rvm(ruby version manager) https://rvm.io/
 
@@ -53,25 +54,34 @@
 
   4. Above comand will create a file called 'application.yml' file. Open that file in your favorite editor and add the following environment variables.
 
-   ### WaveLabs Server Details 
+    ## WaveLabs Server Details 
+   
     API_HOST_URL: 'http://111.93.2.105:8080/starter-app-rest-grails'
+    
     API_CLIENT_ID: 'my-client'
+    
     API_CLIENT_SECRET: '$2a$10$R.b4bFfMN1a.fRptqpF.yelctUYOrVtqGnjSc4J8A1bhO03Qyz3Aa' 
     
-    ### Social Login Details
+    
+    ## Social Login Details
+    
     FACEBOOK_KEY: 'FACEBOOK APP KEY'
+    
     FACEBOOK_SECRET: 'FACEBOOK APP SECRET'
 
     GOOGLE_KEY: 'GOOGLE APP KEY'
     GOOGLE_SECRET: 'GOOGLE APP SECRET'
 
     GITHUB_KEY: 'GITHUB APP KEY'
+    
     GITHUB_SECRET: 'GITHUB APP SECRET'
 
     LINKEDIN_KEY: 'LINKEDIN APP KEY'
+    
     LINKEDIN_SECRET: 'LINKEDIN APP SECRET'
 
     INSTAGRAM_KEY: 'INSTAGRAM APP KEY'
+    
     INSTAGRAM_SECRET: 'INSTAGRAM APP KEY'
 
 
