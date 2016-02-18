@@ -35,41 +35,45 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'swagger-docs'
-
 gem 'responders', '~> 2.0'
 
 gem 'protected_attributes'
 
 gem 'httparty'
 
-gem 'rest-client'
-
 gem 'omniauth'
 
+# For OAuth protocal 
 gem 'omniauth-oauth2', '~> 1.3.1'
 
+# For Login with Facebook 
 gem 'omniauth-facebook'
 
+# For Login with Google +
 gem 'omniauth-google-oauth2'
 
-gem 'omniauth-twitter'
-
+# For Login with github
 gem 'omniauth-github'
 
+# For Login with linkedin
 gem 'omniauth-linkedin-oauth2'
 
+# For Login with Instagram
 gem 'omniauth-instagram'
 
+# Run time dependent for wavelabs_client_api gem
 gem 'httmultiparty'
 
+# For using icons in views
 gem "font-awesome-rails"
 
+# For Environment variables
 gem "figaro"
 
-gem "rails_12factor"
-
+# To Communicate Wavelabs Server Api
 gem "wavelabs_client_api", "0.1.6"
+
+gem "rails_12factor"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

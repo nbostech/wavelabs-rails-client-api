@@ -18,6 +18,10 @@ config/secrets.yml
 config/database.yml
 config/application.yml
 
+.ruby-gemset
+
+.ruby-version
+
 
 ## Environment normalization:
 /.bundle
