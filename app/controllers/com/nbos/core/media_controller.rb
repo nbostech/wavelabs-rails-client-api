@@ -24,7 +24,7 @@ class Com::Nbos::Core::MediaController < ApplicationController
 
     temp_file_path = uploadFile(params[:wavelabs_client_api_client_api_data_models_media_api_model][:newMedia])
     
-    api_response = getMediaApi.upload_media(temp_file_path, "profile", session[:auth_token], session[:member]["id"]) 
+    api_response = getMediaApi.upload_media(temp_file_path.to_path, "profile", session[:auth_token], session[:member]["id"]) 
     
     if api_response[:status] == 200
       flash[:notice] = api_response[:media].message if api_response[:media].message.present?
