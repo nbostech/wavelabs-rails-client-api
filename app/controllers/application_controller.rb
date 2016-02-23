@@ -3,7 +3,18 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :get_initial_auth_token
+
   private
+
+  def get_initial_auth_token
+    req = getAuthApi.get_auth_token("client_credentials", "oauth.client.r")
+    if req[:status] == 200
+      @auth_token = req[:token].value.first
+    else
+      @auth_token = nil
+    end  
+  end  
 
   def has_token!
   	if session[:auth_token].presence 

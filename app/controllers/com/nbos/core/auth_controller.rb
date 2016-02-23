@@ -11,7 +11,7 @@ class Com::Nbos::Core::AuthController < ApplicationController
   def login
     @login = create_basic_login_model
     if request.post?
-      api_response = getAuthApi.login(params[:wavelabs_client_api_client_api_data_models_login_api_model])
+      api_response = getAuthApi.login(params[:wavelabs_client_api_client_api_data_models_login_api_model], @auth_token)
       if api_response[:status] == 200
         @member = api_response[:member]
         create_session(@member)
@@ -47,7 +47,7 @@ class Com::Nbos::Core::AuthController < ApplicationController
   def forgot_password
     @login = create_basic_login_model
     if request.post?
-      api_response = getAuthApi.forgot_password(params[:wavelabs_client_api_client_api_data_models_login_api_model])
+      api_response = getAuthApi.forgot_password(params[:wavelabs_client_api_client_api_data_models_login_api_model], @auth_token)
       if api_response[:status] == 200
         flash[:notice] = api_response[:login].message + " To #{api_response[:login].email}"
         redirect_to :com_nbos_core_login

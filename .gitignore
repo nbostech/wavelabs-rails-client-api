@@ -22,6 +22,8 @@ config/application.yml
 
 .ruby-version
 
+.byebug_history
+
 
 ## Environment normalization:
 /.bundle

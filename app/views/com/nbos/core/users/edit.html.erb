@@ -22,7 +22,7 @@
                 <%= errors_for @member, :description %>
               </div>
             </div>
-   
+            <% if !is_a_social_member? %>
             <div class="form-group">
               <label for="email" class="col-md-3 control-label">Email</label>
 
@@ -31,6 +31,7 @@
                 <%= errors_for @member, :email %>
               </div>
             </div>
+            <% end %>
             <div class="form-group">
               <label for="firstname" class="col-md-3 control-label">First Name</label>
 

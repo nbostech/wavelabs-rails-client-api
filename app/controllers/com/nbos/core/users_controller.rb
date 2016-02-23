@@ -9,7 +9,7 @@ class Com::Nbos::Core::UsersController < ApplicationController
   def sign_up
     @login = create_basic_login_model
    if request.post?
-     api_response = getUsersApi.sign_up(params[:wavelabs_client_api_client_api_data_models_login_api_model])
+     api_response = getUsersApi.sign_up(params[:wavelabs_client_api_client_api_data_models_login_api_model], @auth_token)
       if api_response[:status] == 200
         @login = api_response[:member]
         create_session(@login)
