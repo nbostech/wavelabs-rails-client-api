@@ -71,7 +71,7 @@ gem "font-awesome-rails"
 gem "figaro"
 
 # To Communicate Wavelabs Server Api
-gem "wavelabs_client_api", "0.2.1"
+gem "wavelabs_client_api", "0.2.2"
 
 gem "rails_12factor"
 

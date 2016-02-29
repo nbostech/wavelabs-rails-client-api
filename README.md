@@ -58,9 +58,9 @@
    
     API_HOST_URL: 'http://111.93.2.105:8080/starter-app-rest-grails'
     
-    API_CLIENT_ID: 'my-client'
+    API_CLIENT_KEY: 'my-client'
     
-    API_CLIENT_SECRET: '$2a$10$R.b4bFfMN1a.fRptqpF.yelctUYOrVtqGnjSc4J8A1bhO03Qyz3Aa' 
+    API_CLIENT_SECRET: 'my-secret' 
     
     
     ## Social Login Details
