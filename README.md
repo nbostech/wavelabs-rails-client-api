@@ -56,7 +56,7 @@
 
     ## WaveLabs Server Details 
    
-    API_HOST_URL: 'http://111.93.2.105:8080/starter-app-rest-grails'
+    API_HOST_URL: 'http://api.qa1.wavelabs.in/starter-app-rest-grails'
     
     API_CLIENT_KEY: 'my-client'
     

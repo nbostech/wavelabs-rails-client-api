@@ -18,7 +18,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 ENV['API_HOST_URL']  = 'http://localhost:8080/starter-app-rest-grails'
-ENV['API_CLIENT_ID'] = 'my-client'
+ENV['API_CLIENT_KEY'] = 'my-client'
 ENV['API_CLIENT_SECRET'] = 'my-secret'
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
