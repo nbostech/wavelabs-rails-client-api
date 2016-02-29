@@ -89,11 +89,15 @@
 
     After adding appropriate details save & close the file.
 
-  5. rails server
+  5. After setup the ENV variables. run the following command to create wavelabs_api_client configuration file under config/initializers.
+  
+    $ rails g wavelabs_client_api:install  
 
-  6. Open the link http://localhost:3000 in any browser.
+  6. Run the server from application root as rails server or rails s
 
-  7. Now you are ready to use the web application.  
+  7. Open the link http://localhost:3000 in any browser.
+
+  8. Now you are ready to use the web application.  
 
 
 ## To-Do
