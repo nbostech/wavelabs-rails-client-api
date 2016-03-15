@@ -8,13 +8,17 @@ class ApplicationController < ActionController::Base
   private
 
   def get_initial_auth_token
-    req = getAuthApi.get_auth_token("client_credentials", "scope:oauth.token.verify")
-    if req[:status] == 200
-      @auth_token = req[:token].value.first
+    if WavelabsClientApi::Client::Api::Core::BaseApi.check_connection?
+      req = getAuthApi.get_auth_token("client_credentials", [])
+      if req[:status] == 200
+        @auth_token = req[:token].value.first
+      else
+        flash[:notice] = req[:token].message
+        @auth_token = nil
+      end
     else
-      flash[:notice] = req[:token].message
-      @auth_token = nil
-    end  
+      flash[:notice] = "The Wavelabs Api server is down please try after sometime."
+    end    
   end  
 
   def has_token!
