@@ -11,7 +11,8 @@ class ApplicationController < ActionController::Base
     if WavelabsClientApi::Client::Api::Core::BaseApi.check_connection?
       req = getAuthApi.get_auth_token("client_credentials", [])
       if req[:status] == 200
-        @auth_token = req[:token].value.first
+        @auth_token = req[:token].value
+        puts "#################################{@auth_token}"
       else
         flash[:notice] = req[:token].message
         @auth_token = nil
@@ -47,7 +48,8 @@ class ApplicationController < ActionController::Base
 
   def create_session(member)
     session[:auth_token], session[:refresh_token] , session[:member]= nil
-    session[:auth_token] = member.token.value.first
+    session[:auth_token] = member.token.value
+    puts "*************************#{session[:auth_token]}"
     session[:refresh_token] = member.token.refresh_token
     session[:member] = member
     session[:logged_in_time] = Time.now

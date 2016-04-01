@@ -32,7 +32,8 @@ class Com::Nbos::Core::UsersController < ApplicationController
     if api_response[:status] == 200
       @member = api_response[:member]
     else
-      @login = api_response[:member]
+      #@member = api_response[:member]
+      flash[:notice] = api_response[:member].message
     end
    else
      flash[:notice] = "There was a problem with the request or Server. Please logout & ogin again."
