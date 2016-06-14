@@ -58,9 +58,9 @@
 	 
 		API_HOST_URL: 'http://api.qa1.nbos.in'
 		
-		API_CLIENT_KEY: 'my-client'
+		API_CLIENT_KEY: 'vijaym-app-client'
 		
-		API_CLIENT_SECRET: 'my-secret' 
+		API_CLIENT_SECRET: 'vijaym-app-secret' 
 		
 		
 		## Social Login Details
