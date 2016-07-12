@@ -1,34 +1,6 @@
 # Wavelabs Rails Client
 
-	This is an example application to demonstarte how to use 'wavelabs_client_api' library using Ruby On Rail framework. This application using following major gems:
-
-	# For OAuth protocal 
-	gem 'omniauth-oauth2', '~> 1.3.1'
-
-	# For Login with Facebook 
-	gem 'omniauth-facebook'
-	
-	# For Login with Google +
-	gem 'omniauth-google-oauth2'
-	
-	# For Login with github
-	gem 'omniauth-github'
-	
-	# For Login with linkedin
-	gem 'omniauth-linkedin-oauth2'
-	
-	# For Login with Instagram
-	gem 'omniauth-instagram'
-	
-	# Run time dependent for wavelabs_client_api gem
-	gem 'httmultiparty'
-	
-	# For using icons in views
-	gem "font-awesome-rails"
-	
-	# For Environment variables
-	gem "figaro"
-
+	This is an example application to demonstarte how to use 'wavelabs_client_api' library using Ruby On Rail framework. 
 
 	Gemfile contains all the required gems list. No need to worry about gems list 'bundle install' will install all the gems. Live application is available on heroku https://wavelabs-rails-client-api.herokuapp.com  
 
@@ -48,56 +20,13 @@
 
 	2. cd wavelabs-rails-client-api
 
-	2. bundle install
+	3. bundle install
 
-	3. bundle exec figaro install
+	4. Run the server from application root as 'rails server' or 'rails s'
 
-	4. Above comand will create a file called 'application.yml' file. Open that file in your favorite editor and add the following environment variables.
+	5. Open the link http://localhost:3000 in any browser.
 
-		## WaveLabs Server Details 
-	 
-		API_HOST_URL: 'http://api.qa1.nbos.in'
-		
-		API_CLIENT_KEY: 'vijaym-app-client'
-		
-		API_CLIENT_SECRET: 'vijaym-app-secret' 
-		
-		
-		## Social Login Details
-		
-		FACEBOOK_KEY: 'FACEBOOK APP KEY'
-		
-		FACEBOOK_SECRET: 'FACEBOOK APP SECRET'
-
-		GOOGLE_KEY: 'GOOGLE APP KEY'
-		GOOGLE_SECRET: 'GOOGLE APP SECRET'
-
-		GITHUB_KEY: 'GITHUB APP KEY'
-		
-		GITHUB_SECRET: 'GITHUB APP SECRET'
-
-		LINKEDIN_KEY: 'LINKEDIN APP KEY'
-		
-		LINKEDIN_SECRET: 'LINKEDIN APP SECRET'
-
-		INSTAGRAM_KEY: 'INSTAGRAM APP KEY'
-		
-		INSTAGRAM_SECRET: 'INSTAGRAM APP KEY'
-
-
-		Note: You can use above Wavelabs Server details. It's public. And you need to create your own apps for social logins & modify social login details.
-
-		After adding appropriate details save & close the file.
-
-	5. After setup the ENV variables. run the following command to create wavelabs_api_client configuration file under config/initializers.
-	
-		$ rails g wavelabs_client_api:install  
-
-	6. Run the server from application root as rails server or rails s
-
-	7. Open the link http://localhost:3000 in any browser.
-
-	8. Now you are ready to use the web application.  
+	6. Now you are ready to use the web application.  
 
 
 ## To-Do
