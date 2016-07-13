@@ -23,18 +23,7 @@ After installing Ruby & Rails from console use following commands:
 
 Open the link http://localhost:3000 in any browser.Now you are ready to use the web application.  
 
-
-## To-Do
-
- Need to add test cases.
-
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/nbostech/wavelabs-rails-client-api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
