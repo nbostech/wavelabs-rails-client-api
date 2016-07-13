@@ -1,32 +1,27 @@
 # Wavelabs Rails Client
 
-	This is an example application to demonstarte how to use 'wavelabs_client_api' library using Ruby On Rail framework. 
+This is an example application to demonstarte how to use 'wavelabs_client_api' library using Ruby On Rail framework. 
 
-	Gemfile contains all the required gems list. No need to worry about gems list 'bundle install' will install all the gems. Live application is available on heroku https://wavelabs-rails-client-api.herokuapp.com  
+Gemfile contains all the required gems list. No need to worry about gems list 'bundle install' will install all the gems. Live application is available on heroku https://wavelabs-rails-client-api.herokuapp.com  
 
 ## Ruby & Rails versions
 
-	1. Ruby 2.2.3
+ - Ruby 2.2.3
 	
-	2. Rails 4.2.4
+ - Rails 4.2.4
 
-	You can install required versions of ruby, rails & gemsets using rvm(ruby version manager) https://rvm.io/
+You can install required versions of ruby, rails & gemsets using [rvm(ruby version manager)](https://rvm.io/)
 
 ## Configuration Instructions
  
-	 After installing Ruby & Rails from your console follow the steps:
+After installing Ruby & Rails from console use following commands:
 
-	1. git clone https://github.com/nbostech/wavelabs-rails-client-api.git
+	$>git clone https://github.com/nbostech/wavelabs-rails-client-api.git
+	$>cd wavelabs-rails-client-api
+	$>bundle install
+	$>Run the server from application root as 'rails server' or 'rails s'
 
-	2. cd wavelabs-rails-client-api
-
-	3. bundle install
-
-	4. Run the server from application root as 'rails server' or 'rails s'
-
-	5. Open the link http://localhost:3000 in any browser.
-
-	6. Now you are ready to use the web application.  
+Open the link http://localhost:3000 in any browser.Now you are ready to use the web application.  
 
 
 ## To-Do
