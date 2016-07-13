@@ -19,7 +19,7 @@ After installing Ruby & Rails from console use following commands:
 	$>git clone https://github.com/nbostech/wavelabs-rails-client-api.git
 	$>cd wavelabs-rails-client-api
 	$>bundle install
-	$>Run the server from application root as 'rails server' or 'rails s'
+	$>rails server
 
 Open the link http://localhost:3000 in any browser.Now you are ready to use the web application.  
 
