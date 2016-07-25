@@ -87,22 +87,22 @@ ul.social-network li {
 
 /* footer social icons */
 
-.social-network a.icoFacebook:hover {
+.social-network a.icoFacebook {
     background-color:#3B5998;
 }
-.social-network a.icoTwitter:hover {
+.social-network a.icoTwitter {
     background-color:#33ccff;
 }
-.social-network a.icoGoogle:hover {
+.social-network a.icoGoogle {
     background-color:#BD3518;
 }
-.social-network a.icoLinkedin:hover {
+.social-network a.icoLinkedin {
     background-color:#007bb7;
 }
-.social-network a.icoInstagram:hover {
+.social-network a.icoInstagram {
     background-color: #125688;
 }
-.social-network a.icoGithub:hover {
+.social-network a.icoGithub {
     background-color: #22263D;
 }
 
@@ -154,6 +154,6 @@ a.socialIcon:hover, .socialHoverClass {
     transition: all 0.8s;
 }
 
-.social-circle a {
+/*.social-circle a {
  background-color: #D3D3D3;   
-}
+}*/
