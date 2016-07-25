@@ -15,7 +15,7 @@ class Com::Nbos::Core::AuthController < ApplicationController
       if api_response[:status] == 200
         @member = api_response[:member]
         create_session(@member)
-        redirect_to :com_nbos_core_dash_board
+        redirect_to com_nbos_core_user_profile_path(id: @member.id)
       else
         @login = api_response[:login]
         render :login
