@@ -4,12 +4,11 @@
 
 class Com::Nbos::Core::UsersController < ApplicationController
 
-  before_action :has_token!, :except => [:sign_up]
-
   def sign_up
-    @login = create_basic_login_model
+    @login = create_member_sign_up_model
    if request.post?
-     api_response = getUsersApi.sign_up(params[:wavelabs_client_api_client_api_data_models_login_api_model], @auth_token)
+      binding.pry
+     api_response = @identity_api.signup(params[:idn_sdk_ruby_com_nbos_capi_modules_identity_v0_member_signup_model])
       if api_response[:status] == 200
         @login = api_response[:member]
         create_session(@login)
@@ -26,14 +25,12 @@ class Com::Nbos::Core::UsersController < ApplicationController
   end  
 
   def show
-   if request.get? && params[:id].present? 
-    user_show_params = params
-    api_response = getUsersApi.show(user_show_params, session[:auth_token])
+   if request.get? && params[:uuid].present? 
+    api_response = @identity_api.getMemberDetails(session[:member]["uuid"])
     if api_response[:status] == 200
       @member = api_response[:member]
     else
-      #@member = api_response[:member]
-      flash[:notice] = api_response[:member].message
+      flash[:notice] = api_response[:message]
     end
    else
      flash[:notice] = "There was a problem with the request or Server. Please logout & ogin again."
@@ -42,8 +39,9 @@ class Com::Nbos::Core::UsersController < ApplicationController
 
   def edit
     if request.post?
-      user_update_params = params[:wavelabs_client_api_client_api_data_models_member_api_model]
-      api_response = getUsersApi.update(user_update_params, session[:auth_token])
+      binding.pry
+      user_update_params = params[:idn_sdk_ruby_com_nbos_capi_modules_identity_v0_member_api_model]
+      api_response = @identity_api.updateMemberDetails(session[:member]['id'].to_i, user_update_params)
       if api_response[:status] == 200
         flash.now[:notice] = "Your Profile has been updated successfully."
         @member = api_response[:member]
@@ -58,7 +56,7 @@ class Com::Nbos::Core::UsersController < ApplicationController
         render :edit
       end
     else
-      @member = create_member_model({"member" => session[:member]},false)  
+      @member = create_member_model(session[:member],false)  
     end  
   end
 

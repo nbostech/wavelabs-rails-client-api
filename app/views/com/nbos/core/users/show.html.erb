@@ -1,4 +1,4 @@
-<% if (@member.present? && @member.message.present?) || flash[:notice] %>
+<% if flash[:notice] %>
     <%= render partial: "com/nbos/core/shared/alerts", locals: {obj: @member, notice: flash[:notice]} %>
  <% end %>
 
@@ -32,11 +32,11 @@
                     <td>Phone</td>
                     <td><%= @member.phone %></td>
                   </tr>
-                  <% if @member.social_accounts.size > 0 %>
+                  <% if @member.socialAccounts.size > 0 %>
                     <tr>
                         <td>Social Accounts</td>
-                    <% @member.social_accounts.each do |sa| %>
-                        <td><%= sa.social_type%></td>
+                    <% @member.socialAccounts.each do |sa| %>
+                        <td><%= sa.socialType%></td>
                     <% end %>
                     </tr>
                   <% end %>

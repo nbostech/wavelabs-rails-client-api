@@ -73,6 +73,10 @@ gem "figaro"
 # To Communicate Wavelabs Server Api
 gem "wavelabs_client_api", "0.3.5"
 
+gem "idn_sdk_ruby", :path => "../idn_sdk_ruby"
+
+gem 'pry'
+
 gem "rails_12factor"
 
 group :development, :test do

@@ -4,7 +4,6 @@
 # with Wavelabes API Server
 
 class Com::Nbos::Social::SocialController < ApplicationController
- skip_before_action :has_token!
 
  def create
 	 api_response = getSocialApi.login(request.env['omniauth.auth'], params[:provider], @auth_token)

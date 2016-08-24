@@ -23,7 +23,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <% if current_user %>
-                <li><%= link_to "Profile", com_nbos_core_user_profile_path(id: session[:member]["id"]) %></li>
+                <li><%= link_to "Profile", com_nbos_core_user_profile_path(uuid: session[:member]["uuid"]) %></li>
                 <li><%= link_to "Picture", com_nbos_core_get_media_path %></li>
                 <% if !is_a_social_member? %>
                   <li><%= link_to "Change Password", com_nbos_core_change_password_path %></li>

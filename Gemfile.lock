@@ -1,3 +1,10 @@
+PATH
+  remote: ../idn_sdk_ruby
+  specs:
+    idn_sdk_ruby (0.1.0)
+      activemodel (= 4.2.4)
+      httmultiparty (= 0.3.16)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,6 +48,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.1)
+    coderay (1.1.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -83,6 +91,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.99)
     mimemagic (0.3.1)
     mini_portile2 (2.0.0)
@@ -122,6 +131,10 @@ GEM
       omniauth (~> 1.2)
     protected_attributes (1.1.3)
       activemodel (>= 4.0.1, < 5.0)
+    pry (0.10.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -186,6 +199,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    slop (3.6.0)
     spring (1.6.2)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -223,6 +237,7 @@ DEPENDENCIES
   font-awesome-rails
   httmultiparty
   httparty
+  idn_sdk_ruby!
   jbuilder (~> 2.0)
   jquery-rails
   omniauth
@@ -233,6 +248,7 @@ DEPENDENCIES
   omniauth-linkedin-oauth2
   omniauth-oauth2 (~> 1.3.1)
   protected_attributes
+  pry
   rails (= 4.2.4)
   rails_12factor
   responders (~> 2.0)

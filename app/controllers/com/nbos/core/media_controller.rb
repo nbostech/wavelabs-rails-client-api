@@ -6,8 +6,6 @@
 # Wavelabs Server client side temporary file will be deleted. 
 
 class Com::Nbos::Core::MediaController < ApplicationController
-  before_action :has_token!
-
 
   def get_media
   	api_response = getMediaApi.get_media(session[:member]["id"], "profile", session[:auth_token])

@@ -4,18 +4,16 @@
 # requests with Wavelabes API Server
 
 class Com::Nbos::Core::AuthController < ApplicationController
-  
-  before_action :has_token!, :except => [:login, :forgot_password]
-  before_action :check_server_connection!, :only => [:login]
 
   def login
-    @login = create_basic_login_model
+    @login = create_login_model
     if request.post?
-      api_response = getAuthApi.login(params[:wavelabs_client_api_client_api_data_models_login_api_model], @auth_token)
-      if api_response[:status] == 200
+      loginApiModel = create_login_model(params[:idn_sdk_ruby_com_nbos_capi_modules_identity_v0_login_model][:username],params[:idn_sdk_ruby_com_nbos_capi_modules_identity_v0_login_model][:password])
+      api_response = @identity_api.login(loginApiModel)
+      if api_response[:status] == 200 
         @member = api_response[:member]
         create_session(@member)
-        redirect_to com_nbos_core_user_profile_path(id: @member.id)
+        redirect_to com_nbos_core_user_profile_path(uuid: @member.uuid)
       else
         @login = api_response[:login]
         render :login
@@ -24,9 +22,10 @@ class Com::Nbos::Core::AuthController < ApplicationController
   end
 
   def change_password
-    @login = create_basic_login_model
+    @login = create_update_password_model
     if request.post?
-      api_response = getAuthApi.change_password(params[:wavelabs_client_api_client_api_data_models_login_api_model], session[:auth_token])
+      update_password_model = create_update_password_model(params[:idn_sdk_ruby_com_nbos_capi_modules_identity_v0_update_password_api_model][:password], params[:idn_sdk_ruby_com_nbos_capi_modules_identity_v0_update_password_api_model][:newPassword])
+      api_response = @identity_api.updateCredentials(update_password_model)
       if api_response[:status] == 200 || api_response[:status] == 400
         @login = api_response[:login]
       else
@@ -36,7 +35,7 @@ class Com::Nbos::Core::AuthController < ApplicationController
   end
 
   def logout
-    api_response = getAuthApi.logout(session[:auth_token])
+    api_response = @identity_api.logout
     if api_response[:status] == 200
       flash[:notice] = api_response[:login].message
       clear_session
