@@ -60,7 +60,6 @@ class IdsRailsApiContext < IdnSdkRuby::Com::Nbos::Capi::Api::V0::InMemoryApiCont
       #Read client credentials from ENVS
       client_key = ENV["MODULE_#{moduleName.upcase}_API_CLIENT_KEY"]
       client_secret = ENV["MODULE_#{moduleName.upcase}_API_CLIENT_SECRET"]
-      binding.pry
       map["client_id"] = client_key != nil ? client_key :"sample-app-client"
       map["client_secret"] = client_secret != nil ? client_secret :"sample-app-secret"
       super(map)

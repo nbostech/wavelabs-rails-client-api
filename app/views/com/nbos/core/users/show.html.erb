@@ -1,4 +1,4 @@
-<% if flash[:notice] %>
+<% if (@member.present? && @member.message.present?) || flash[:notice] %>
     <%= render partial: "com/nbos/core/shared/alerts", locals: {obj: @member, notice: flash[:notice]} %>
  <% end %>
 

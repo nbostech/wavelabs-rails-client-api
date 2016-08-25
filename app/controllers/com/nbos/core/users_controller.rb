@@ -7,7 +7,6 @@ class Com::Nbos::Core::UsersController < ApplicationController
   def sign_up
     @login = create_member_sign_up_model
    if request.post?
-      binding.pry
      api_response = @identity_api.signup(params[:idn_sdk_ruby_com_nbos_capi_modules_identity_v0_member_signup_model])
       if api_response[:status] == 200
         @login = api_response[:member]
@@ -39,7 +38,6 @@ class Com::Nbos::Core::UsersController < ApplicationController
 
   def edit
     if request.post?
-      binding.pry
       user_update_params = params[:idn_sdk_ruby_com_nbos_capi_modules_identity_v0_member_api_model]
       api_response = @identity_api.updateMemberDetails(session[:member]['id'].to_i, user_update_params)
       if api_response[:status] == 200

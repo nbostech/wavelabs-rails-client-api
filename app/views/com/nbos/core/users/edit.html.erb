@@ -1,5 +1,5 @@
 
-<% if flash[:notice] %>
+<% if (@member.present? && @member.message.present?) || flash[:notice] %>
     <%= render partial: "com/nbos/core/shared/alerts", locals: {obj: @member, notice: flash[:notice]} %>
 <% end %>
 
@@ -14,7 +14,7 @@
         </div>
         <div class="panel-body">
           <%= form_for(@member, url: com_nbos_core_edit_path, method: 'post', html: { role: "form", id: "signupForm", class: "form-horizontal" }) do |f| %>
-            <%= f.hidden_field :id,  :value => "#{@member.id}"%>
+            <%#= f.hidden_field :id,  :value => "#{@member.id}"%>
             <div class="form-group">
               <label for="usd" class="col-md-3 control-label">Description</label>
               <div class="col-md-9">

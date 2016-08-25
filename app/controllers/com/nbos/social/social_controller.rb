@@ -6,7 +6,7 @@
 class Com::Nbos::Social::SocialController < ApplicationController
 
  def create
-	 api_response = getSocialApi.login(request.env['omniauth.auth'], params[:provider], @auth_token)
+	 api_response = @identity_api.connect(request.env['omniauth.auth'], params[:provider])
 	 if api_response[:status] == 200 && !api_response[:login].message.present?
 	    @member = api_response[:login]
 	    create_session(@member)
