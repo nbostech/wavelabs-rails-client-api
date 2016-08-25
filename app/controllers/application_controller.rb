@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
   def create_session(member)
     session[:auth_token], session[:refresh_token] , session[:member]= nil
     session[:auth_token] = member.token.access_token
-    puts "*************************#{session[:auth_token]}"
     session[:refresh_token] = member.token.refresh_token
     session[:member] = member
     session[:logged_in_time] = Time.now

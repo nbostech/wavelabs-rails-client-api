@@ -1,8 +1,4 @@
 # Add configuration values here
-  API_HOST_URL: 'http://api.qa1.nbos.in'
-  API_CLIENT_KEY: 'sample-app-client'
-  #API_CLIENT_SECRET: '$2a$10$R.b4bFfMN1a.fRptqpF.yelctUYOrVtqGnjSc4J8A1bhO03Qyz3Aa' 
-  API_CLIENT_SECRET: 'sample-app-secret'
   FACEBOOK_KEY: "491136411063102"
   FACEBOOK_SECRET: "02ca29c33c8fea9f7151683ad5743274"
   GOOGLE_KEY: "607620882992-l55qmpgmf1vjo5e9tj5i678pjph9gfmp.apps.googleusercontent.com"
@@ -16,7 +12,7 @@
   INSTAGRAM_KEY: "6b8c149ac82d4885a74be5f877206e56"
   INSTAGRAM_SECRET: "708b62d4e80a40ab884c521ed8627d27"
 
-  MODULE_IDENTITY_API_HOST_URL: "http://localhosst:8080"
+  MODULE_IDENTITY_API_HOST_URL: "http://api.qa1.nbos.in"
   MODULE_IDENTITY_API_CLIENT_KEY: "sample-app-client"
   MODULE_IDENTITY_API_CLIENT_SECRET: "sample-app-secret"
 
